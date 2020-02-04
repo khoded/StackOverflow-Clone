@@ -89,6 +89,10 @@ userSchema.pre('save', async function(next){
     }
     next()
 })
-
+userSchema.methods.generateAuthToken = async function(password) {
+    // Generate an auth token for the user
+    const token = jwt.sign({password}, "8hhg5f56g7t67")
+    return token
+}
 const User = mongoose.model('users', userSchema);
 module.exports = User;

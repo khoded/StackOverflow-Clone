@@ -7,7 +7,7 @@ const cors = require('cors');
 //intialize db
 db.connectMongodb();
 
-//connect tools
+//connect tools and middlewares
 const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
