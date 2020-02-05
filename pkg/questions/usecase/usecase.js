@@ -12,13 +12,32 @@ class questionUsecase {
         throw error
       }
     }
-    async viewQuestion(payload) {
+
+    async viewQuestion() {
       try {
-        const data = await this.repo.viewQuestion(payload)
+        const data = await this.repo.viewQuestion()
         return data
       } catch (error) {
         throw error
       }
     }
+    
+    async voteQuestion(vote, questionId, userId) {
+      try {
+        const data = await this.repo.voteQuestion(vote, questionId,userId)
+        return data
+      } catch (error) {
+        throw error
+      }
+    }
+
+    async answerQuestion(userId, questionId, answer) {
+      try {
+        const data = await this.repo.answerQuestion(userId, questionId, answer)
+        return data
+      } catch (error) {
+        throw error        
+      }
+    }
 }  
-module.exports = userUsecase;
+module.exports = questionUsecase;

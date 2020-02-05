@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken')
 
 const auth = async(req, res, next) => {
-    const token = req.header("token")
+    const token = req.header('token')
     try {
         const data = jwt.verify(token, '8hhg5f56g7t67');
         if (!data) {
-            res.status(401).send({ error: 'Not authorized' })
+            res.status(401).send({ error: 'Not authorized to access this resource' })
         }
         next();
     } catch (error) {

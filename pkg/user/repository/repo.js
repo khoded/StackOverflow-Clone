@@ -7,8 +7,8 @@ class userRepository {
       try {
         const data = await userModel.create(payload);
         const token = await data.generateAuthToken(data.password);
-        const response = { ...data, token };
-        return response; 
+        const response = { ...data["_doc"], token }; 
+        return response
       } catch (error) {
         if (error.message.substring(0, 6) === 'E11000') {
           throw new Error('user already exist')
@@ -34,5 +34,5 @@ class userRepository {
           throw error
         }
       }
-
 }
+module.exports= userRepository

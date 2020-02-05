@@ -1,8 +1,9 @@
 const express = require('express');
-const db = require('.config/db/db');
+const db = require('./config/db/db');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
+const users =require('./pkg/user');
+const question = require('./pkg/questions');
 
 //intialize db
 db.connectMongodb();
@@ -15,7 +16,8 @@ app.use(cors());
 
 
 //connect services
-
+app.use(users.userService)
+app.use(question.questionService)
 
 //start app
 app.listen(process.env.PORT || 8000, ()=>{

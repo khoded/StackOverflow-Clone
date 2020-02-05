@@ -35,6 +35,6 @@ class handlers {
               message: error.message,
             });
           }
-      };
-    
+      };   
 }
+module.exports = handlers
