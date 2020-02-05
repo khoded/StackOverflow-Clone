@@ -4,6 +4,9 @@ const jwt = require('jsonwebtoken');
 const schema = mongoose.Schema
 
 const answerSchema = new schema({
+        questionId:{
+             type: mongoose.Types.ObjectId,
+        },
         userId: {
             type: mongoose.Types.ObjectId,
         },

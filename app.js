@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const users =require('./pkg/user');
 const question = require('./pkg/questions');
+const answers = require('./pkg/answers');
 
 //intialize db
 db.connectMongodb();
@@ -18,6 +19,7 @@ app.use(cors());
 //connect services
 app.use(users.userService)
 app.use(question.questionService)
+app.use(answers.answerService)
 
 //start app
 app.listen(process.env.PORT || 8000, ()=>{
