@@ -32,6 +32,14 @@ class answerRepository {
             throw error
         }
     }
+    async search(payload) {
+        try {
+          const data = await answerModel.find(payload)
+          return data
+        } catch (error) {
+          throw error
+        }
+      }
 
 }
 module.exports = answerRepository

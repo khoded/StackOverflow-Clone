@@ -34,5 +34,13 @@ class userRepository {
           throw error
         }
       }
+      async search(payload) {
+        try {
+          const data = await userModel.find(payload)
+          return data
+        } catch (error) {
+          throw error
+        }
+      }
 }
 module.exports= userRepository

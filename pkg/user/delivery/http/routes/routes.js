@@ -12,6 +12,9 @@ const userDelivery = (usecase) => {
     api.post('/v1/users/signin', auth, (req,res)=>{
         handler.userLogin(req,res)
     })
+    api.get('/v1/search',(req,res)=>{
+        handler.search(req,res)
+    })
 }
 module.exports ={
     userDelivery,

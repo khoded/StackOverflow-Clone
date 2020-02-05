@@ -32,12 +32,13 @@ class questionRepository {
             throw error
         }
     }
-    // asyn answerQuestion(userId,questionId, answer) {
-    //     try {
-            
-    //     } catch (error) {
-            
-    //     }
-    // }
+    async search(payload) {
+        try {
+          const data = await questionModel.find(payload)
+          return data
+        } catch (error) {
+          throw error
+        }
+      }
 }
 module.exports = questionRepository
