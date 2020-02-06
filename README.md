@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This api mocks the major featurs of StacckOverflow 
+This api mocks the major features of StackOverflow 
 
 ## Features
 
