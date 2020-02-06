@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This api mocks the maor featurs of StacckOverflow 
+This api mocks the major featurs of StacckOverflow 
 
 ## Features
 
@@ -14,9 +14,11 @@ This api mocks the maor featurs of StacckOverflow
 6. Answer Question
 7. View Answers to a particular Question
 8. Search (Questions, Answers and Users)
-9. Upvote or DOwnvote Question
-10. Upvote or Downvote Answers
-11. Email notification once a uestion is answered.
+9. Upvote or Downvote Answers
+10. Email notification once a question is answered.
+
+Github:  https://github.com/khoded/StackOverflow-Clone
+Deployed on Heroku at :https://stackoverflow-api-clone.herokuapp.com/ 
 
 ## Project Pipeline
 - [Hosted API](https://stackoverflow-api-clone.herokuapp.com/)
@@ -41,7 +43,7 @@ Ensure you have the following installed on your local machine:
 
 - Make sure you have `nodejs` installed.
 
-- Clone or fork repo🤷‍♂
+- Clone or fork repo
 
   ```bash
     - git clone https://github.com/khoded/StackOverflow-Clone
@@ -53,14 +55,15 @@ Ensure you have the following installed on your local machine:
 - Create/configure `.env` environment with your credentials. Required environmental variables are the `EMAIL` and `password` for gmail
 
 - Run `nodemon start` to start the server and watch for changes
+
 ##Architecture
-For better project structure I implemented clean architecture therefore dividing each componenet of the resource into layers, these
+For better project structure I implemented clean architecture therefore dividing each componenent of the resource into layers, this
 ensures each module has it own function and it's independent of databases,UI, external 3rd party user. Therefore coupling is seamless and testable.
 Each resource has 
 -delivery layer
 -repository layer
 -Usecase layer
-THis design enures the application can be refactored,readable and be switched either as microservices or monoliths.
+Tis design enures the application can be refactored,readable and be switched either as microservices or monoliths.
  
 ## HTTP Requests
 
