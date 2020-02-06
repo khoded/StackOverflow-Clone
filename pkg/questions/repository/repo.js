@@ -40,5 +40,21 @@ class questionRepository {
           throw error
         }
       }
+    async getQuestionSubscribers(questionId) {
+        try {
+            const data = await questionModel.findOne({_id: questionId})
+            return data.subscribers
+          } catch (error) {
+            throw error
+          }
+    }
+    async subscribe(questionId, email) {
+        try {
+            await questionModel.update({ _id:  mongoose.Types.ObjectId(questionId)},{$push: {subscribers: {email}}})
+            return "user subsribed to this question"
+        } catch (error) {
+            throw error
+        }
+    }
 }
 module.exports = questionRepository

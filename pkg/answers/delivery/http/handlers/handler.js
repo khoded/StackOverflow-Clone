@@ -10,7 +10,7 @@ class handlers {
               res.status(201).json({
                 status: 'success',
                 message: 'Answer created successfully',
-                data: data
+                data: {answer: data.answer, emails: data.emails}
               });
             } catch (error) {
               res.json({

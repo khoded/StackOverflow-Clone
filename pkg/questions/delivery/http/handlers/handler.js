@@ -89,5 +89,22 @@ class handlers {
           });
         }
       }
+      async subscribe(req,res) {
+        try {
+          const questionId = req.params.questionId
+          const email = req.params.email
+          const data = await this.usecase.subscribe(questionId, email)
+          res.status(200).json({
+            status: 'success',
+            message: 'Question subscription successfully',
+            data: data
+          })
+        } catch (error) {
+          res.json({
+            status: 'error',
+            message: error.message,
+          });
+        }
+      }
     }    
 module.exports = handlers

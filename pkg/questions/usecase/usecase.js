@@ -39,5 +39,13 @@ class questionUsecase {
         throw error        
       }
     }
+    async subscribe(questionId, email) {
+      try {
+        const data = await this.repo.subscribe(questionId, email)
+        return data
+      } catch (error) {
+        throw error
+      }
+    }
 }  
 module.exports = questionUsecase;

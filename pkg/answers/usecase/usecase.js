@@ -1,13 +1,31 @@
+const transporter = require('../../emails/mail')
 class answerUsecase {
-    constructor(repo) {
+    constructor(repo, questionRepo) {
       this.repo = repo;
-  
+      this.questionRepo = questionRepo;
     }
   
     async createAnswer(payload) {
       try {
-        const data = await this.repo.createAnswer(payload)
-        return data
+        const answer = await this.repo.createAnswer(payload)
+        const questionId = payload.questionId
+        const emails = await this.questionRepo.getQuestionSubscribers(questionId)
+        emails.map(address => {
+       // config for mailserver and mail, input your data
+       const mailOptions = {
+        from: 'adewaleonamade@gmail.com', // sender address
+        to: address, // list of receivers
+        subject: 'StackOverflow Answer Notification', // Subject line
+        html: '<p>An asnwer have been supplied to a question you are subscribed to</p>'// plain text body
+      };
+      transporter.sendMail(mailOptions, function (err, info) {
+              if(err)
+                console.log(err)
+              else
+                console.log(info);
+          });  
+        })
+        return {answer, emails}
       } catch (error) {
         throw error
       }

@@ -18,6 +18,9 @@ const questionDelivery = (usecase) => {
     api.put('v1/questions/answer/:userId/:questionId', auth, (req,res)=>{
         handler.answerQuestion(req,res)
     })
+    api.put('/v1/question/subscribe/:questionId/:email', auth, (req, res)=>{
+        handler.subscribe(req,res)
+    })
 }
 module.exports ={
     questionDelivery,

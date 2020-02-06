@@ -4,6 +4,11 @@ const jwt = require('jsonwebtoken');
 const schema = mongoose.Schema
 
 const questionSchema = new schema({
+        subscribers: [{
+            email:{
+                type: String
+            }
+        }],
         userId: {
             type: mongoose.Types.ObjectId,
         },
