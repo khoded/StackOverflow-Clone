@@ -34,7 +34,7 @@ class answerRepository {
     }
     async search(payload) {
         try {
-          const data = await answerModel.find(payload)
+          const data = await answerModel.find({ $text: { $search: payload } })
           return data
         } catch (error) {
           throw error

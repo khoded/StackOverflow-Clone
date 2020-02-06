@@ -36,7 +36,7 @@ class userRepository {
       }
       async search(payload) {
         try {
-          const data = await userModel.find(payload)
+          const data = await userModel.find({ $text: { $search: payload } })
           return data
         } catch (error) {
           throw error
