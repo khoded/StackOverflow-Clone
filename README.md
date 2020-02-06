@@ -76,7 +76,7 @@ All API requests are made by sending a secure HTTPS request using  the `GET`, `P
 
 Each response will be returned with one of the following HTTP status codes:
 
-- `201` `OK The resource was created successfull
+- `201` `OK The resource was created successfully
 - `200` `Ok The request was successfull
 - `400` `Bad Request` There was a problem with the request (security, malformed)
 - `500` `Server Error` An error on the server occurred
